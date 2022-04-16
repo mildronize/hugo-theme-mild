@@ -19,6 +19,6 @@ disableAutoCollapse: true
 
 This is some static page where you can write about yourself.
 
-## hugo theme [simpleness](https://github.com/RainerChiang/simpleness)
+## hugo theme [mild](https://github.com/mildronize/mild-theme)
 
 A hugo theme ported form [contrast-hugo](https://github.com/niklasbuschmann/contrast-hugo)

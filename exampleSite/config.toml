@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en"
 DefaultContentLanguage = "en"
-theme = "simpleness"
+theme = "mild-theme"
 
 title = "Rainer Chiang"
 enableInlineShortcodes = true
@@ -40,7 +40,7 @@ googleAnalytics = ""
   weight = 2
 
 [social]
-  github = "https://github.com/RainerChiang"
+  github = "https://github.com/mildronize"
   rss = "index.xml"
 
 [taxonomies]
