@@ -44,3 +44,18 @@
     })();
 </script>
 {{ end }}
+
+<!-- App Script -->
+<!-- https://makewithhugo.com/running-in-dev-mode/ -->
+{{ if .Site.IsServer }}
+    <!-- local development -->
+    <script src="{{ .Site.Params.staticPrefix }}{{ "dev/app.js" | relURL }}"></script>
+{{ end }}
+{{ if not .Site.IsServer }}
+    <!-- production -->
+    <script src="{{ .Site.Params.staticPrefix }}{{ "js/app.js" | relURL }}"></script>
+{{ end }}
+
+<script >
+    document.body.appendChild(App.component());
+</script>

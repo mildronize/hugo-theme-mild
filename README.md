@@ -53,3 +53,13 @@ hugo server
 ```
 
 then, open http://localhost:1313/ in your browser。
+
+## Local Development
+
+```
+cd exampleSite/
+hugo server --themesDir ../..
+```
+
+## Original Author
+- Rainer Chiang

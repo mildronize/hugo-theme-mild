@@ -12,7 +12,6 @@ min_version = "0.51"
   homepage = "https://thadaw.com/"
   repo = "https://github.com/mildronize/mild-theme"
 
-
 [original.author]
   name = "Rainer Chiang"
   homepage = "https://rainerchiang.github.io/"
