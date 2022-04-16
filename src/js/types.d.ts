@@ -6,10 +6,6 @@ declare global {
   interface Window {
     App: any;
     $: any;
-    // Dark Mode
-    __setPreferredTheme: any;
-    __subscribeOnThemeChange: any;
-    __theme: any;
   }
 
 }

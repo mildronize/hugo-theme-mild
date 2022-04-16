@@ -1,6 +1,6 @@
 // import './types';
-import * as _ from 'lodash';
-import injectThemeSwitcher, { setThemeMode } from './DarkMode';
+// import * as _ from 'lodash';
+// import injectThemeSwitcher, { setThemeMode } from './DarkMode';
 // Test import of styles
 import '../styles/index.css'
 
@@ -10,7 +10,10 @@ if (window) {
   console.log(window.location.href);
 }
 
-function component() {
+
+async function component() {
+  // dynamic-imports: https://webpack.js.org/guides/code-splitting/#dynamic-imports
+  const { default: _ } = await import('lodash');
   const element = document.createElement('div');
 
   element.innerHTML = _.join(['Hello', 'Webpack'], ' ');
@@ -22,9 +25,5 @@ function component() {
 
 // Attach App to window scope for inline script HTML
 window.App = {
-  component,
-  setThemeMode,
-  injectThemeSwitcher
+  component
 }
-// Attach jQuery to window scope for inline script HTML
-window.$ = require("jquery");

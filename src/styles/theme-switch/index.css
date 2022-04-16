@@ -1,0 +1,47 @@
+@import "sun-and-moon.css";
+
+.theme-toggle{
+    --size: 2rem;
+    --icon-fill: hsl(210 10% 30%);
+    --icon-fill-hover: hsl(210 10% 15%);
+    background:none;
+    border:none;
+    padding:0;
+    inline-size:var(--size);
+    block-size:var(--size);
+    aspect-ratio:1;
+    border-radius:50%;
+    cursor:pointer;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+    outline-offset:5px
+}
+.theme-toggle>svg{
+    inline-size:100%;
+    block-size:100%;
+    stroke-linecap:round
+}
+[data-theme=dark] .theme-toggle{
+    --icon-fill: hsl(210 10% 70%);
+    --icon-fill-hover: hsl(210 15% 90%) 
+}
+@media (hover: none){
+    .theme-toggle{
+        --size: 48px 
+    }
+}
+/* *{
+    box-sizing:border-box;
+    margin:0
+} */
+html{
+    color-scheme:light
+}
+html[data-theme=dark]{
+    color-scheme:dark
+}
+@supports not (color-scheme: dark){
+    html[data-theme=dark]{
+        /* background:#111 */
+    }
+}
