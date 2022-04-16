@@ -1,3 +1,15 @@
+<!-- App Script -->
+<!-- https://makewithhugo.com/running-in-dev-mode/ -->
+{{ if .Site.IsServer }}
+    <!-- local development -->
+    <script src="{{ .Site.Params.staticPrefix }}{{ "dev/app.js" | relURL }}"></script>
+{{ end }}
+{{ if not .Site.IsServer }}
+    <!-- production -->
+    <script src="{{ .Site.Params.staticPrefix }}{{ "js/app.js" | relURL }}"></script>
+{{ end }}
+
+
 {{ if and .Site.Params.lazyImage (not .IsHome) -}}
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/lazyload.min.js" | relURL }}"></script>
 <script>
@@ -6,7 +18,8 @@
 {{ end }}
 
 {{ if and .Params.toc .TableOfContents }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+<!-- Use jQuery from App.js instead -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script> -->
 <script>
     (function() {
         var $toc = $('#TableOfContents');
@@ -45,17 +58,8 @@
 </script>
 {{ end }}
 
-<!-- App Script -->
-<!-- https://makewithhugo.com/running-in-dev-mode/ -->
-{{ if .Site.IsServer }}
-    <!-- local development -->
-    <script src="{{ .Site.Params.staticPrefix }}{{ "dev/app.js" | relURL }}"></script>
-{{ end }}
-{{ if not .Site.IsServer }}
-    <!-- production -->
-    <script src="{{ .Site.Params.staticPrefix }}{{ "js/app.js" | relURL }}"></script>
-{{ end }}
-
 <script >
     document.body.appendChild(App.component());
+    // App.setThemeMode('light');
+    App.injectThemeSwitcher();
 </script>

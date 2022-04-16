@@ -3,7 +3,7 @@ languageCode = "en"
 DefaultContentLanguage = "en"
 theme = "mild-theme"
 
-title = "Rainer Chiang"
+title = "Mild Theme"
 enableInlineShortcodes = true
 enableEmoji = true
 googleAnalytics = ""
