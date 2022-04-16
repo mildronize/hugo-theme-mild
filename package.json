@@ -6,9 +6,10 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack:dev": "webpack --config webpack.dev.js",
-    "webpack:build": "webpack --config webpack.prod.js",
-    
+    "dev": "run-p **:develop",
+    "hugo:develop": "cd exampleSite && hugo server --themesDir ../..",
+    "webpack:develop": "webpack --config webpack.dev.js",
+    "webpack:build": "webpack --config webpack.prod.js"
   },
   "author": "Thada",
   "license": "MIT",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.181",
+    "npm-run-all": "^4.1.5",
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0",
