@@ -1,3 +1,4 @@
+// import $ from 'jquery';
 console.log("my first ts ")
 
 if (window) {

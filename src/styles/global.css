@@ -77,6 +77,7 @@
 }
 
 body {
+    /* --background-default: #ccc; */
     /* -webkit-font-smoothing: antialiased; */
     background-color: var(--background-default);
     color: var(--colors-text-1);
@@ -86,7 +87,7 @@ body {
     font-weight: 300;
     font-size: 13pt;
     line-height: var(--line-height-base);
-    /* transition: var(--theme-transition); */
+    transition: background-color var(--theme-transition);
 }
 
 body.light {

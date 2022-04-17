@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en" }}">
   {{ partial "head.html" . }}
+  {{ partial "pre-scripts.html" . }}
 <body>
   {{ partial "navigation.html" . }}
   {{ block "main" . }}{{ end }}
