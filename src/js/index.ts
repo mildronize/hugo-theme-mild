@@ -1,5 +1,5 @@
 // Test import of styles
-import '../styles/index.css'
+import '../styles/index.css' 
 
 console.log("my first ts ")
 

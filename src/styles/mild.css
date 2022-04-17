@@ -1,0 +1,88 @@
+.post-text .highlight pre {
+  font-size: var(--code-font);
+  font-size: 14px;
+  overflow-x: auto;
+  margin: auto;
+  padding: .5em .8em;
+}
+
+.highlight pre::-webkit-scrollbar {
+  height: .9em;
+  background-color: #eff1f5;
+}
+
+.highlight pre::-webkit-scrollbar-track{
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.highlight pre::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color:#a8a8a8;
+  border: 2px solid #eff1f5
+}
+
+/* ------- post toc -------*/
+.post-toc {
+  /* display: none; */
+  position: fixed;
+  overflow-y: auto;
+  left: 50%;
+  top: 9em;
+  font-size: 0.9em;
+  width: 35em;
+  margin-left: 30em;
+  padding-left: 1em;
+  max-height: 85%;
+}
+.post-toc-title {
+  font-weight: bold;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+.post-toc ul {
+  padding-left: 1em;
+}
+.post-toc li {
+  list-style: none;
+  padding-left: 1em;
+  margin-top: 2px;
+}
+.post-toc li a.active {
+  font-weight: bold;
+}
+@media screen and (min-width: 1400px) {
+  .post-toc {
+    display: block;
+  }
+}
+/* ------- post toc end -------*/
+/* ========================== post text end ========================== */
+
+
+/* ------- post footer -------*/
+.post-footer div {
+  margin: 1em 0;
+}
+
+.post-lastmod {
+  font-style: italic;
+  color: var(--gray-color);
+}
+
+.related-posts h4 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+/* ------- post footer end -------*/
+
+
+/* ------- comments -------*/
+.comments-item {
+  margin-top: 10%;
+}
+
+/* .comments-valine .vcontent  p {
+  background: rgba(142, 142, 145, 0.04);
+} */
+/* ------- comments end -------*/
