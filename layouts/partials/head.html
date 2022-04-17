@@ -12,11 +12,11 @@
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/global.css"> -->
   {{ if .Site.IsServer }}
     <!-- local development -->
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}dev/styles/main.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}dev/styles/style.css">
   {{ end }}
   {{ if not .Site.IsServer }}
     <!-- production -->
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/styles/main.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/styles/style.css">
   {{ end }}
 
 

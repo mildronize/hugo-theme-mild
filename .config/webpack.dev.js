@@ -21,6 +21,6 @@ module.exports = merge(common, {
   ],
 
   output: {
-    path: path.resolve(__dirname, "static/dev"),
+    path: path.resolve(__dirname, "../static/dev"),
   },
 });
