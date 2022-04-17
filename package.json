@@ -9,7 +9,7 @@
     "dev": "run-p **:develop",
     "build": "run-s webpack:build hugo:build",
     "hugo:develop": "cd exampleSite && hugo server --themesDir ../..",
-    "hugo:build": "cd exampleSite && hugo --themesDir ../..",
+    "hugo:build": "cd exampleSite && hugo --minify --themesDir ../..",
     "webpack:develop": "webpack --config .config/webpack.dev.js",
     "webpack:build": "webpack --config .config/webpack.prod.js"
   },

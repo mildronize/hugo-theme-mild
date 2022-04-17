@@ -1,5 +1,7 @@
 # Hugo Theme: Mild
 
+[![Build GitHub Pages](https://github.com/mildronize/hugo-theme-mild/actions/workflows/deploy-gh-pages.yaml/badge.svg)](https://github.com/mildronize/hugo-theme-mild/actions/workflows/deploy-gh-pages.yaml)
+
 Mild is a theme for hugo which is ported from [simpleness](https://github.com/RainerChiang/simpleness).
 
 ![screenshot](images/screenshot.png)

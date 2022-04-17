@@ -1,7 +1,7 @@
 baseURL: /
 languageCode: en
 DefaultContentLanguage: en
-theme: mild-theme
+theme: hugo-theme-mild
 title: Mild Theme
 enableInlineShortcodes: true
 enableEmoji: true
