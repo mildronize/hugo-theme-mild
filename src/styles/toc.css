@@ -1,0 +1,55 @@
+/* ------- post toc -------*/
+
+/* Ref: https://spigotdesign.com/smooth-scroll-offset-anchor-links-with-css/ */
+/* Anchor Offset for Fixed top bar */
+.post {
+  h1, h2, h3, h4, h5, h6 {
+    &:before {
+      content: "";
+      display: block;
+      height: 100px;
+      margin: -100px 0 0;
+    }
+  }
+}
+  
+.post-toc {
+  /* display: none; */
+  position: fixed;
+  overflow-y: auto;
+  left: 50%;
+  top: 9em;
+  font-size: 0.9em;
+  width: 35em;
+  margin-left: 30em;
+  padding-left: 1em;
+  max-height: 85%;
+
+  ul {
+    margin:0;
+    padding:0;
+  }
+}
+.post-toc-title {
+  font-weight: bold;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+.post-toc ul {
+  padding-left: 1em;
+}
+.post-toc li {
+  list-style: none;
+  padding-left: 1em;
+  margin-top: 2px;
+}
+.post-toc li a.active {
+  font-weight: bold;
+}
+@media screen and (min-width: 1400px) {
+  .post-toc {
+    display: block;
+  }
+}
+/* ------- post toc end -------*/
+/* ========================== post text end ========================== */

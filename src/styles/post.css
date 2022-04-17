@@ -1,0 +1,103 @@
+/* ------- post -------*/
+
+.post {
+  /* body{
+    ${onMobile} {
+      font-size: 12pt;
+    }
+  } */
+
+  h1{
+    font-size: 1.7rem;
+  }
+  h2{
+      font-size: 1.5rem;
+  }
+  h3{
+      font-size: 1.25rem;
+  }
+  h4{
+      font-size: 1.15rem;
+  }
+
+  p {
+      margin: 25px 0;
+  }
+
+  ol > li, ul > li{
+    margin: 7px 0;
+  }
+
+  ol > li > p {
+    margin: 10px 0;
+  }
+
+  p > code {
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 0.8em;
+  }
+
+  pre > code {
+    font-size: 0.9rem;
+  }
+
+  /* Work with 'addClassWhenLinkIsUrl()' */
+  a.url {
+    word-break: break-all;
+  }
+
+  .gatsby-highlight{
+    margin: 30px 0;
+  }
+
+  img{
+    margin: 20px 0 20px 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  blockquote {
+    background-color: var(--colors-blockquote);
+    padding: 15px 25px;
+    margin: 10px 0 10px 0;
+    border-radius: 0.5em;
+    margin-block-start: 0;
+  }
+
+  blockquote p {
+    margin: 0;
+    padding: 0;
+  }
+
+  iframe {
+    border: none;
+  }
+
+  hr {
+    margin: 70px 20px;
+    border: 1px solid var(--colors-hover-0);
+  }
+
+  /** Styling collapsible markdown -> 'details > summary' */
+
+  details {
+    border: 2px solid var(--colors-hover-1);
+    padding: 15px;
+    border-radius: 7px;
+
+    :hover{
+      border-color: var(--colors-border-details);
+    }
+
+    > summary {
+      text-decoration: underline;
+      cursor: pointer;
+      :hover{
+        text-decoration: none;
+      }
+    }
+  }
+
+}

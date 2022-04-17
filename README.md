@@ -12,6 +12,10 @@ Mild is a theme for hugo which is ported from [simpleness](https://github.com/Ra
 - Google Analytics support
 - Comment systems include: disqus, valine
 - Table of content
+- PostCSS
+- TypeScript
+- Theme Switch 
+- Code Highlight using Prism JS based on theme
 
 ## TODO
 

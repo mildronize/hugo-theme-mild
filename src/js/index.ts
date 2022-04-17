@@ -1,10 +1,10 @@
 // import $ from 'jquery';
 // import Prism from 'prismjs';
-console.log("my first ts ")
+// console.log("my first ts ")
 
-if (window) {
-  console.log(window.location.href);
-}
+// if (window) {
+//   console.log(window.location.href);
+// }
 
 
 async function component() {

@@ -3,9 +3,11 @@
   {{ partial "head.html" . }}
   {{ partial "pre-scripts.html" . }}
 <body>
-  {{ partial "navigation.html" . }}
-  {{ block "main" . }}{{ end }}
-  {{ partial "foot.html" . }}
+  {{ partial "topbar.html" . }}
+  <div class="container">
+    {{ block "main" . }}{{ end }}
+    {{ partial "foot.html" . }}
+  </div>
 </body>
   {{ partial "scripts.html" . }}
 </html>

@@ -1,0 +1,30 @@
+<nav class="topbar">
+  <div class="fixed-top-container">
+    <div class="container wide">
+      <div class="flex-container">
+        <div class="flex-item">
+          <div class="logo"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
+        </div>
+        <div class="flex-item">
+          <a class="menu-item" href="/posts/">Posts</a>
+          <a class="menu-item" href="/talks/">Talks</a>
+          <a class="menu-item" href="/tags/">Tags</a>
+          <div class="offset-theme-switch-btn"> {{ partial "theme-switch.html" . }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-offset-bottom"></div>
+</nav>
+
+<script>
+
+  // On document ready
+  // @ts-check
+  $(function () {
+    // Ref: https://stackoverflow.com/a/10117960
+    /** @type {string} */
+    var activeurl = window.location.pathname;
+    $('.topbar a.menu-item[href="'+activeurl+'"]').addClass('active');
+  });
+</script>
