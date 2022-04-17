@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "run-p **:develop",
+    "build": "run-s webpack:build hugo:build",
     "hugo:develop": "cd exampleSite && hugo server --themesDir ../..",
     "hugo:build": "cd exampleSite && hugo --themesDir ../..",
     "webpack:develop": "webpack --config webpack.dev.js",
@@ -22,6 +23,8 @@
     "@types/jquery": "^3.5.14",
     "@types/lodash": "^4.14.181",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "mini-css-extract-plugin": "^2.6.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.12",
     "postcss-loader": "^6.2.1",
@@ -30,7 +33,9 @@
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "webpack-remove-empty-scripts": "^0.8.0"
   }
 }

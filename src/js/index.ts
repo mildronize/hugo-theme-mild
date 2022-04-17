@@ -1,6 +1,3 @@
-// import './types';
-// import * as _ from 'lodash';
-// import injectThemeSwitcher, { setThemeMode } from './DarkMode';
 // Test import of styles
 import '../styles/index.css'
 
@@ -12,7 +9,7 @@ if (window) {
 
 
 async function component() {
-  // dynamic-imports: https://webpack.js.org/guides/code-splitting/#dynamic-imports
+  // dynamic imports: https://webpack.js.org/guides/code-splitting/#dynamic-imports
   const { default: _ } = await import('lodash');
   const element = document.createElement('div');
 

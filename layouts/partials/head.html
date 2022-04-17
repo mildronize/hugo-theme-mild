@@ -10,6 +10,16 @@
   <link rel="icon" href="{{ .Site.Params.favicon }}">
   {{- end }}
   <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}css/global.css"> -->
+  {{ if .Site.IsServer }}
+    <!-- local development -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}dev/styles/main.css">
+  {{ end }}
+  {{ if not .Site.IsServer }}
+    <!-- production -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/styles/main.css">
+  {{ end }}
+
+
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="alternate" type="application/rss+xml" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" title="{{ .Site.Title }}">
   <!-- Font Awesome -->

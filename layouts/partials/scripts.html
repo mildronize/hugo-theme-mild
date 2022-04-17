@@ -2,16 +2,16 @@
 <!-- https://makewithhugo.com/running-in-dev-mode/ -->
 {{ if .Site.IsServer }}
     <!-- local development -->
-    <script src="{{ .Site.Params.staticPrefix }}{{ "dev/app.js" | relURL }}"></script>
+    <script src="{{ .Site.Params.staticPrefix }}{{ "dev/main.js" | relURL }}"></script>
 {{ end }}
 {{ if not .Site.IsServer }}
     <!-- production -->
-    <script src="{{ .Site.Params.staticPrefix }}{{ "js/app.js" | relURL }}"></script>
+    <script src="{{ .Site.Params.staticPrefix }}{{ "assets/main.js" | relURL }}"></script>
 {{ end }}
 
 
 {{ if and .Site.Params.lazyImage (not .IsHome) -}}
-<script src="{{ .Site.Params.staticPrefix }}{{ "js/lazyload.min.js" | relURL }}"></script>
+<script src="{{ .Site.Params.staticPrefix }}{{ "assets/lazyload.min.js" | relURL }}"></script>
 <script>
   var lazyImage = new LazyLoad({container: document.getElementById('article')});
 </script>

@@ -1,13 +1,18 @@
-const path = require('path')
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common.js')
+const path = require("path");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
+
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = merge(common, {
   // Set the mode to development or production
-  mode: 'production',
+  mode: "production",
   devtool: false,
-   output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, 'static/js'),
+  output: {
+    path: path.resolve(__dirname, "static/assets"),
   },
-})
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin(), "..."],
+  },
+});
