@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     main:"./src/js/index.ts",
     style: './src/styles/index.css',
+    preload_style: './src/styles/preload.css',
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js",".css"],
@@ -22,12 +23,15 @@ module.exports = {
 
       // Styles: Inject CSS into the head with source maps
       {
-        test: /\.(css)$/,
+        test: /\.(scss|css)$/,
         use: [
           // Extracts CSS into separate files
           MiniCssExtractPlugin.loader,
           // 'style-loader',
           {loader: 'css-loader?url=false', options: {sourceMap: true, importLoaders: 1}},
+         
+          {loader: 'sass-loader', options: {sourceMap: true}},
+
           {loader: 'postcss-loader', options: {sourceMap: true}},
         ],
       },

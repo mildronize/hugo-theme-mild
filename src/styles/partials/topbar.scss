@@ -1,3 +1,7 @@
+@mixin topbar-menu-hover {
+  color: var(--text-heading);
+  background-color: var(--colors-hover-0);
+}
 
 .topbar {
   .fixed-top-container {
@@ -41,19 +45,18 @@
     color: var(--color-default);
     font-weight: 400;
     padding: 8px 12px;
-    &:hover {
-      color: var(--text-heading);
-      background-color: var(--colors-hover-0);
-    }
-    &.active {
-      color: var(--text-heading);
-      /* font-weight: bold; */
-      background-color: var(--colors-hover-0);
+    &:hover, &.active {
+      @include topbar-menu-hover;
     }
   }
 
-  .offset-theme-switch-btn {
-    margin-left: 15px;
-    margin-top: 5px;
+  .theme-switch-button {
+    border-radius: 50%;
+    padding: 12px 12px 2px 12px;
+    margin-left: 5px;
+    margin-top: 0px;
+    &:hover {
+      @include topbar-menu-hover;
+    }
   }
 }

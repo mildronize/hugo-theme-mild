@@ -1,0 +1,17 @@
+
+$breakpoints:(
+  mobile: 460px,
+  tablet: 768px,
+  desktop: 1170px
+);
+
+@each $key,$val in $breakpoints {
+  // Generate hide-on-mobile, hide-on-tablet, hide-on-desktop
+  @media (max-width: #{$val}) {
+    .hide-on-#{$key} {
+      display: none;
+    }
+  }
+
+}
+

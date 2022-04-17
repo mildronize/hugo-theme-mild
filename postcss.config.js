@@ -1,5 +1,5 @@
 const postcssPresetEnv  = require('postcss-preset-env');
-const postcssNested = require('postcss-nested');
+// const postcssNested = require('postcss-nested');
 
 module.exports = {
   plugins: [
@@ -17,6 +17,6 @@ module.exports = {
         'color-functional-notation': false,
       }
     }),
-    postcssNested(),
+    // postcssNested(),
   ]
 }

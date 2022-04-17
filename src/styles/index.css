@@ -1,8 +1,6 @@
-@import "global.css";
-@import "common.css";
-@import "mild.css";
-@import "theme-switch/index.css";
-@import "prism-template.css";
-@import "toc.css";
-@import "post.css";
-@import "topbar.css";
+/* @import "global.css"; */
+@import "partials/prism-template.css";
+@import "partials/toc.css";
+@import "partials/post.css";
+@import "partials/mild.css";
+@import "partials/variables.css";

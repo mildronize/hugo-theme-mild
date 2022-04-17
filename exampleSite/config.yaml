@@ -1,10 +1,12 @@
-baseURL: /hugo-theme-mild/
+# baseURL: /hugo-theme-mild/
 # Local Dev
-# baseURL: /
+# When using / in Site.BaseURL it will return "//localhost:1313/" 
+# Read more: https://discourse.gohugo.io/t/localhost-github-pages-mismatch/31905/3
+baseURL: /
 languageCode: en
 DefaultContentLanguage: en
 theme: hugo-theme-mild
-title: Mild Theme
+title: Mild
 enableInlineShortcodes: true
 enableEmoji: true
 googleAnalytics: ""
@@ -29,17 +31,18 @@ params:
     visitor: true
     serverURLS: https://abc123.api.lncldglobal.com
     debug: false
-# menu:
-#   main:
-#     - name: Posts
-#       url: /posts/
-#       weight: 1
-#     - name: Talks
-#       url: /talks/
-#       weight: 2
-#     - name: Tags
-#       url: /tags/
-#       weight: 3
+menu:
+  main:
+    - name: Posts
+      url: posts/
+      weight: 1
+    - name: Talks
+      url: talks/
+      weight: 2
+  extend:
+    - name: Tags
+      url: tags/
+      weight: 3
 social:
   github: https://github.com/mildronize
   rss: index.xml

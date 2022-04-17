@@ -1,0 +1,105 @@
+
+blockquote {
+  margin: 0;
+}
+
+/* Inline code */
+/* :not(pre) code {
+   padding: 0.2em;
+   border-radius: 0.3em;
+   white-space: normal;
+   color: var(--colors-text-0);
+   background: #eee;
+} */
+
+:not(pre) > code[class*="language-"] {
+   /* padding: 0.1em;
+   border-radius: 0.3em; */
+   padding: 0.2em;
+   border-radius: 0.3em;
+   white-space: normal;
+   color: var(--colors-text-0);
+   background: var(--colors-background);
+ }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: var(--colors-text-0);
+   font-family: var(--font-family-inter);
+   font-weight: 500;
+   line-height: 1.5;
+   letter-spacing: 0.3px;
+}
+
+h1 {
+   font-size: 2.5rem;
+}
+h2 {
+   font-size: 2rem;
+}
+h3 {
+   font-size: 1.5rem;
+}
+h4 {
+   font-size: 1.25rem;
+}
+/* 
+p {
+   margin-bottom: var(--paragraph-margin-bottom);
+   letter-spacing: 0.1px;
+} */
+
+/* -------- */
+
+/* Helper */
+
+/* Word Wrap add word wrap to code block */
+
+.word-wrap pre[class*="language-"],
+.word-wrap code[class*="language-"]{
+ white-space: pre-wrap;
+ word-break: break-all;
+ word-wrap: break-word;
+}
+
+
+.post-text .highlight pre {
+  /* font-size: var(--code-font); */
+  font-size: 14px;
+  overflow-x: auto;
+  margin: auto;
+  padding: .5em .8em;
+  line-height: 1.5;
+}
+
+/* ------- comments -------*/
+.comments-item {
+  margin-top: 10%;
+}
+
+/* .comments-valine .vcontent  p {
+  background: rgba(142, 142, 145, 0.04);
+} */
+/* ------- comments end -------*/
+
+
+/* ------- post footer -------*/
+.post-footer div {
+  margin: 1em 0;
+}
+
+.post-lastmod {
+  font-style: italic;
+  color: var(--gray-color);
+}
+
+.related-posts h4 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+/* ------- post footer end -------*/

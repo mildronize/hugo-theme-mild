@@ -8,4 +8,8 @@ declare global {
     $: any;
   }
 
+  // interface Element{
+  //   // For `document.getElementsByClassName('post-toc')[0].style.display = '';`
+  //   style: any;
+  // }
 }
