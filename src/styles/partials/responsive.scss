@@ -5,11 +5,21 @@ $breakpoints:(
   desktop: 1170px
 );
 
+.hidden {
+  display: none;
+}
+
 @each $key,$val in $breakpoints {
   // Generate hide-on-mobile, hide-on-tablet, hide-on-desktop
   @media (max-width: #{$val}) {
     .hide-on-#{$key} {
       display: none;
+    }
+  }
+
+  @media (min-width: #{$val}) {
+    .show-on-#{$key} {
+      display: block;
     }
   }
 

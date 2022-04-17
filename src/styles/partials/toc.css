@@ -46,10 +46,10 @@
 .post-toc li a.active {
   font-weight: bold;
 }
-@media screen and (min-width: 1400px) {
+/* @media screen and (min-width: 1400px) {
   .post-toc {
     display: block;
   }
-}
+} */
 /* ------- post toc end -------*/
 /* ========================== post text end ========================== */
