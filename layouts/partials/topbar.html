@@ -6,9 +6,10 @@
           <div class="logo"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>
         </div>
         <div class="flex-item">
-          <a class="menu-item" href="/posts/">Posts</a>
-          <a class="menu-item" href="/talks/">Talks</a>
-          <a class="menu-item" href="/tags/">Tags</a>
+          <a class="menu-item" href="{{ .Site.BaseURL }}posts/">Posts</a>
+          <a class="menu-item" href="{{ .Site.BaseURL }}talks/">Talks</a>
+          <a class="menu-item" href="{{ .Site.BaseURL }}tags/">Tags</a>
+        
           <div class="offset-theme-switch-btn"> {{ partial "theme-switch.html" . }}</div>
         </div>
       </div>

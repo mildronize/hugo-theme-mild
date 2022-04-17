@@ -1,4 +1,6 @@
 baseURL: /hugo-theme-mild/
+# Local Dev
+# baseURL: /
 languageCode: en
 DefaultContentLanguage: en
 theme: hugo-theme-mild
@@ -27,14 +29,17 @@ params:
     visitor: true
     serverURLS: https://abc123.api.lncldglobal.com
     debug: false
-menu:
-  main:
-    - name: Home
-      url: /
-      weight: 1
-    - name: About
-      url: /about/
-      weight: 2
+# menu:
+#   main:
+#     - name: Posts
+#       url: /posts/
+#       weight: 1
+#     - name: Talks
+#       url: /talks/
+#       weight: 2
+#     - name: Tags
+#       url: /tags/
+#       weight: 3
 social:
   github: https://github.com/mildronize
   rss: index.xml

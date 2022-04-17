@@ -70,9 +70,11 @@ then, open http://localhost:1313/ in your browser。
 
 ## Local Development
 
+Change `exampleSite/config.yaml` from `baseURL: /hugo-theme-mild/` to `baseURL: /`
+
 ```
-cd exampleSite/
-hugo server --themesDir ../..
+npm install
+npm run dev
 ```
 
 ## Original Author
