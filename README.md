@@ -54,6 +54,14 @@ hugo server
 
 then, open http://localhost:1313/ in your browser。
 
+## Todo
+
+- [ ] Write Hugo Shortcode for render hightlight block for Prismjs, [Line Number](https://prismjs.com/plugins/line-numbers/), [Light Highlight](https://prismjs.com/plugins/line-highlight)
+    ```html
+    <pre tabindex="0" class="chroma line-numbers" data-line="8">
+    ```
+    Note: The native shortcode from Hugo `{{< highlight html >}}` only support `chroma`
+
 ## Local Development
 
 ```

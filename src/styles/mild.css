@@ -1,11 +1,12 @@
 .post-text .highlight pre {
-  font-size: var(--code-font);
+  /* font-size: var(--code-font); */
   font-size: 14px;
   overflow-x: auto;
   margin: auto;
   padding: .5em .8em;
+  line-height: 1.5;
 }
-
+/*
 .highlight pre::-webkit-scrollbar {
   height: .9em;
   background-color: #eff1f5;
@@ -20,7 +21,7 @@
   border-radius: 10px;
   background-color:#a8a8a8;
   border: 2px solid #eff1f5
-}
+} */
 
 /* ------- post toc -------*/
 .post-toc {

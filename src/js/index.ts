@@ -1,4 +1,5 @@
 // import $ from 'jquery';
+// import Prism from 'prismjs';
 console.log("my first ts ")
 
 if (window) {
@@ -22,3 +23,13 @@ async function component() {
 window.App = {
   component
 }
+// // On document ready
+// $(function () {
+//   Prism.highlightAll();
+// });
+
+// <pre tabindex="0" class="chroma line-numbers" data-line="8">
+// $('code[class*="language-"], pre[class*="language-"]').attr('data-line', '8');
+
+// $('.highlight').attr('data-line', '8');
+

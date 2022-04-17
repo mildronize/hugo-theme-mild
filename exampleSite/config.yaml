@@ -1,0 +1,46 @@
+baseURL: /
+languageCode: en
+DefaultContentLanguage: en
+theme: mild-theme
+title: Mild Theme
+enableInlineShortcodes: true
+enableEmoji: true
+googleAnalytics: ""
+params:
+  lazyImage: true
+  enableMathJax: false
+  enableReadingTime: true
+  favicon: favicon.ico
+  startyear: "2019"
+  description: A simple and concise hugo theme.
+  disqus: ""
+  valine:
+    enable: false
+    lang: en
+    appId: ""
+    appKey: ""
+    placeholder: Say Something......
+    requiredFields:
+      - nick
+      - mail
+    avatar: robohash
+    visitor: true
+    serverURLS: https://abc123.api.lncldglobal.com
+    debug: false
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: About
+      url: /about/
+      weight: 2
+social:
+  github: https://github.com/mildronize
+  rss: index.xml
+taxonomies:
+  category: categories
+  tag: tags
+markup:
+  highlight:
+    noClasses: false

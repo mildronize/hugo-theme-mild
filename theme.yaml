@@ -1,0 +1,31 @@
+name: mild
+license: MIT
+licenselink: https://github.com/mildronize/mild-theme/blob/main/LICENSE
+description: A simple Hugo theme
+homepage: https://github.com/mildronize/mild-theme
+tags:
+  - blog
+  - simple
+  - clean
+  - highlight
+  - readable
+features:
+  - blog
+  - simple
+  - clean
+  - highlight
+min_version: "0.51"
+author:
+  name: Thada Wangthammang
+  homepage: https://thadaw.com/
+  repo: https://github.com/mildronize/mild-theme
+original2:
+  author:
+    name: Rainer Chiang
+    homepage: https://rainerchiang.github.io/
+    repo: https://github.com/RainerChiang/simpleness
+original:
+  author:
+    name: Niklas Buschmann
+    homepage: https://github.com/niklasbuschmann/
+    repo: https://github.com/niklasbuschmann/contrast-hugo
