@@ -7,11 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "run-p **:develop",
-    "build": "run-s webpack:build hugo:build",
+    "build": "run-s webpack:build hugo:build purgecss:build",
     "hugo:develop": "cd exampleSite && hugo server --themesDir ../..",
     "hugo:build": "cd exampleSite && hugo --minify --themesDir ../..",
     "webpack:develop": "webpack --config .config/webpack.dev.js",
-    "webpack:build": "webpack --config .config/webpack.prod.js"
+    "webpack:build": "webpack --config .config/webpack.prod.js",
+    "purgecss:build": "run-s purgecss publish-purgecss",
+    "purgecss": "purgecss --config .config/purgecss.config.js  --output exampleSite/public/assets/styles",
+    "publish-purgecss": "copyfiles -V -f exampleSite/public/assets/styles/*.css ./static/assets/styles"
   },
   "author": "Thada",
   "license": "MIT",
@@ -22,6 +25,7 @@
   "devDependencies": {
     "@types/jquery": "^3.5.14",
     "@types/lodash": "^4.14.181",
+    "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "mini-css-extract-plugin": "^2.6.0",
@@ -29,6 +33,7 @@
     "postcss": "^8.4.12",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.4.3",
+    "purgecss": "^4.1.3",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
