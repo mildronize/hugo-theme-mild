@@ -23,6 +23,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@types/jquery": "^3.5.14",
     "@types/lodash": "^4.14.181",
     "copyfiles": "^2.4.1",

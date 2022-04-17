@@ -1,8 +1,8 @@
-# baseURL: /hugo-theme-mild/
+baseURL: /hugo-theme-mild/
 # Local Dev
 # When using / in Site.BaseURL it will return "//localhost:1313/" 
 # Read more: https://discourse.gohugo.io/t/localhost-github-pages-mismatch/31905/3
-baseURL: /
+# baseURL: /
 languageCode: en
 DefaultContentLanguage: en
 theme: hugo-theme-mild
