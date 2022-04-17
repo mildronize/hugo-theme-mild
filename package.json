@@ -6,9 +6,11 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "run-p **:develop",
-    "build": "run-s webpack:build hugo:build purgecss:build",
-    "hugo:develop": "cd exampleSite && hugo server --themesDir ../..",
+    "dev": "run-s dev:setup && run-p **:develop",
+    "build": "run-s webpack:build hugo:build purgecss",
+    "publish": "run-s build publish-purgecss",
+    "dev:setup": "node ./.config/setup-hugo-dev.js exampleSite/config.yaml exampleSite/config.dev.yaml",
+    "hugo:develop": "cd exampleSite && hugo server --config config.dev.yaml --themesDir ../..",
     "hugo:build": "cd exampleSite && hugo --minify --themesDir ../..",
     "webpack:develop": "webpack --config .config/webpack.dev.js",
     "webpack:build": "webpack --config .config/webpack.prod.js",
@@ -44,6 +46,7 @@
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-merge": "^5.8.0",
-    "webpack-remove-empty-scripts": "^0.8.0"
+    "webpack-remove-empty-scripts": "^0.8.0",
+    "yaml": "^2.0.1"
   }
 }

@@ -77,5 +77,18 @@ npm install
 npm run dev
 ```
 
+Release new version
+
+```
+npm run publish
+```
+
+Build only (for Pipeline)
+
+```
+npm run build
+```
+
+
 ## Original Author
 - Rainer Chiang

@@ -136,3 +136,6 @@ exampleSite/public
 .hugo_build.lock
 
 .DS_Store
+
+# Hugo Config dev env
+config.dev.yaml
