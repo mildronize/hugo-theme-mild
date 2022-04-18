@@ -49,6 +49,8 @@ social:
 taxonomies:
   category: categories
   tag: tags
+# A must config for remove all style from code highlight
+# To be use with Prism JS.
 markup:
   highlight:
     noClasses: false
