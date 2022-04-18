@@ -1,14 +1,44 @@
-<!-- App Script -->
-<!-- https://makewithhugo.com/running-in-dev-mode/ -->
-{{ if .Site.IsServer }}
-    <!-- local development -->
-    <script src="{{ .Site.Params.staticPrefix }}{{ "dev/main.js" | relURL }}"></script>
-{{ end }}
-{{ if not .Site.IsServer }}
-    <!-- production -->
-    <script src="{{ .Site.Params.staticPrefix }}{{ "assets/main.js" | relURL }}"></script>
+<script>
+  // https://github.com/filamentgroup/loadCSS/
+  /*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
+  !function(e){"use strict";var t=function(t,n,r,o){var i,a=e.document,d=a.createElement("link");if(n)i=n;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;i=f[f.length-1]}var l=a.styleSheets;if(o)for(var s in o)o.hasOwnProperty(s)&&d.setAttribute(s,o[s]);d.rel="stylesheet",d.href=t,d.media="only x",function e(t){if(a.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(d,n?i:i.nextSibling)});var u=function(e){for(var t=d.href,n=l.length;n--;)if(l[n].href===t)return e();setTimeout(function(){u(e)})};function c(){d.addEventListener&&d.removeEventListener("load",c),d.media=r||"all"}return d.addEventListener&&d.addEventListener("load",c),d.onloadcssdefined=u,u(c),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+</script>
+
+{{ $path := . }}
+{{ if .Site.Params.webpackOutputPath }}
+  {{ $path = .Site.Params.webpackOutputPath }}
+{{ else }}
+  {{ $path = "assets" }}
 {{ end }}
 
+<!-- This should be work for theme user -->
+<!-- App Script -->
+<script src="{{ .Site.BaseURL }}{{ $path }}{{ "/main.js" | relURL }}"></script>
+<!-- App CSS -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}{{ $path }}/styles/preload_style.css">
+<script defer>loadCSS("{{ .Site.BaseURL }}{{ $path }}/styles/style.css")</script>
+<script defer>loadCSS("{{ .Site.BaseURL }}{{ $path }}/styles/icons.css")</script>
+
+{{- if or .Params.enableMathJax .Site.Params.enableMathJax }}
+<script defer>
+  // Load Katex
+  loadCSS("https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css")
+</script>
+<script 
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" 
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" 
+  crossorigin="anonymous">
+</script>
+<script 
+  defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" 
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" 
+  crossorigin="anonymous" 
+  onload="renderMathInElement(document.body);">
+</script>  
+{{- end }}
+{{ if .Site.GoogleAnalytics }}
+{{ template "_internal/google_analytics.html" . }}
+{{ end }}
 
 {{ if and .Site.Params.lazyImage (not .IsHome) -}}
 <script src="{{ .Site.Params.staticPrefix }}{{ "assets/lazyload.min.js" | relURL }}"></script>
