@@ -1,3 +1,5 @@
+@import "animation.scss";
+
 *,
 *::after,
 *::before {
@@ -20,6 +22,11 @@
   --paragraph-margin-bottom: 1.2rem;
   /* Line Height */
   --line-height-base: 1.8;
+
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  /* Theme Transition */
+  --theme-transition: font-size 0.25s var(--ease-in-out-quad), background 0.25s var(--ease-in-out-quad),
+      color 0.25s var(--ease-in-out-quad); 
 }
 
 body {
@@ -33,7 +40,7 @@ body {
   font-weight: 300;
   font-size: 13pt;
   line-height: var(--line-height-base);
-  transition: background-color var(--theme-transition);
+  transition: var(--theme-transition);
 }
 
 /* Default Color before variables.css loaded */

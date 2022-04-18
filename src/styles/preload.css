@@ -1,8 +1,6 @@
-
-@import "partials/scaffold.css";
+@import "core/scaffold.scss";
 /* @import "partials/variables.css"; */
 @import "partials/post.css";
 @import "partials/theme-switch.scss";
 @import "partials/topbar.scss";
-@import "partials/responsive.scss";
-
+@import "core/responsive.scss";

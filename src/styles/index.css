@@ -2,4 +2,4 @@
 @import "partials/prism-template.css";
 @import "partials/toc.css";
 @import "partials/mild.css";
-@import "partials/variables.css";
+@import "core/variables.css";
