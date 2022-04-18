@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "run-s dev:setup && run-p **:develop",
     "build": "run-s webpack:build hugo:build purgecss",
-    "publish": "run-s build publish-purgecss",
+    "publish": "run-s clean build publish-purgecss",
     "dev:setup": "node ./.config/setup-hugo-dev.js exampleSite/config.yaml exampleSite/config.dev.yaml",
     "hugo:develop": "cd exampleSite && hugo server --config config.dev.yaml --themesDir ../..",
     "hugo:build": "cd exampleSite && hugo --minify --themesDir ../..",
@@ -18,7 +18,7 @@
     "purgecss:build": "run-s purgecss publish-purgecss",
     "purgecss": "purgecss --config .config/purgecss.config.js  --output exampleSite/public/assets/styles",
     "publish-purgecss": "copyfiles -V -f exampleSite/public/assets/styles/*.css ./static/assets/styles",
-    "clean": "rm -rf $TMPDIR/hugo_cache/ && rm -rf static/dev",
+    "clean": "rm -rf $TMPDIR/hugo_cache/ && rm -rf static/dev && rm -rf exampleSite/public",
     "serve:only": "http-server exampleSite/public",
     "serve": "run-s webpack:build hugo:build-local purgecss serve:only"
   },
