@@ -89,6 +89,9 @@ Build only (for Pipeline)
 npm run build
 ```
 
+Note: Disable Cache when develop
+
+![disable-cache-dev-tools](images/disable-cache-dev-tools.png)
 
 ## Original Author
 - Rainer Chiang

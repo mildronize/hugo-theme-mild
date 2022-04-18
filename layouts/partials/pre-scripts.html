@@ -11,13 +11,13 @@
 <!-- local development -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}dev/styles/preload_style.css">
 <script defer>loadCSS("{{ .Site.BaseURL }}dev/styles/style.css")</script>
-<script defer>loadCSS("{{ .Site.BaseURL }}dev/styles/font_awesome.css")</script>
+<script defer>loadCSS("{{ .Site.BaseURL }}dev/styles/icons.css")</script>
 {{ end }}
 {{ if not .Site.IsServer }}
 <!-- production -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/styles/preload_style.css">
 <script defer>loadCSS("{{ .Site.BaseURL }}assets/styles/style.css")</script>
-<script defer>loadCSS("{{ .Site.BaseURL }}assets/styles/font_awesome.css")</script>
+<script defer>loadCSS("{{ .Site.BaseURL }}assets/styles/icons.css")</script>
 {{ end }}
 
 {{- if or .Params.enableMathJax .Site.Params.enableMathJax }}

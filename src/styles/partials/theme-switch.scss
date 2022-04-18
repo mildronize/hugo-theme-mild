@@ -1,0 +1,99 @@
+/* Ref:
+  Super cool for theme switch animation:
+    - https://web.dev/building-a-theme-switch-component/
+    - https://github.com/argyleink/gui-challenges/tree/main/theme-switch 
+*/
+
+// Config
+$light-theme-fill-color: #525660;
+$dark-theme-fill-color: #D6D8DC;
+
+/* @import "https://unpkg.com/open-props/easings.min.css"; */
+/* Ref:  */
+:where(html){--ease-1:cubic-bezier(.25,0,.5,1);--ease-2:cubic-bezier(.25,0,.4,1);--ease-3:cubic-bezier(.25,0,.3,1);--ease-4:cubic-bezier(.25,0,.2,1);--ease-5:cubic-bezier(.25,0,.1,1);--ease-in-1:cubic-bezier(.25,0,1,1);--ease-in-2:cubic-bezier(.50,0,1,1);--ease-in-3:cubic-bezier(.70,0,1,1);--ease-in-4:cubic-bezier(.90,0,1,1);--ease-in-5:cubic-bezier(1,0,1,1);--ease-out-1:cubic-bezier(0,0,.75,1);--ease-out-2:cubic-bezier(0,0,.50,1);--ease-out-3:cubic-bezier(0,0,.3,1);--ease-out-4:cubic-bezier(0,0,.1,1);--ease-out-5:cubic-bezier(0,0,0,1);--ease-in-out-1:cubic-bezier(.1,0,.9,1);--ease-in-out-2:cubic-bezier(.3,0,.7,1);--ease-in-out-3:cubic-bezier(.5,0,.5,1);--ease-in-out-4:cubic-bezier(.7,0,.3,1);--ease-in-out-5:cubic-bezier(.9,0,.1,1);--ease-elastic-1:cubic-bezier(.5,.75,.75,1.25);--ease-elastic-2:cubic-bezier(.5,1,.75,1.25);--ease-elastic-3:cubic-bezier(.5,1.25,.75,1.25);--ease-elastic-4:cubic-bezier(.5,1.5,.75,1.25);--ease-elastic-5:cubic-bezier(.5,1.75,.75,1.25);--ease-squish-1:cubic-bezier(.5,-.1,.1,1.5);--ease-squish-2:cubic-bezier(.5,-.3,.1,1.5);--ease-squish-3:cubic-bezier(.5,-.5,.1,1.5);--ease-squish-4:cubic-bezier(.5,-.7,.1,1.5);--ease-squish-5:cubic-bezier(.5,-.9,.1,1.5);--ease-step-1:steps(2);--ease-step-2:steps(3);--ease-step-3:steps(4);--ease-step-4:steps(7);--ease-step-5:steps(10)}
+
+.theme-toggle {
+  cursor: pointer;
+}
+
+// SASS mixin to convert a hex to a CSS filter: Ref; https://stackoverflow.com/a/66365650
+
+@mixin recolor($color: #000, $opacity: 1) {
+  $r: calc(red($color) / 255);
+  $g: calc(green($color) / 255);
+  $b: calc(blue($color) / 255);
+  $a: $opacity;
+
+  // grayscale fallback if SVG from data url is not supported
+  $lightness: lightness($color);
+  filter: saturate(0%) brightness(0%) invert($lightness) opacity($opacity);
+
+  // color filter
+  $svg-filter-id: "recolor";
+  filter: url('data:image/svg+xml;utf8,\
+      <svg xmlns="http://www.w3.org/2000/svg">\
+        <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
+          <feColorMatrix type="matrix" values="\
+            0 0 0 0 #{$r}\
+            0 0 0 0 #{$g}\
+            0 0 0 0 #{$b}\
+            0 0 0 #{$a} 0\
+          "/>\
+        </filter>\
+      </svg>\
+      ##{$svg-filter-id}');
+}
+
+@mixin icon-overlay-show {
+  opacity: 1; 
+  z-index: 10;
+  transform: scale(1);
+}
+
+@mixin icon-overlay-hide {
+  opacity: 0; 
+  z-index: 0;
+  transform: scale(0.55);
+}
+
+.sun-and-moon{
+  position: relative;
+
+  .moon {
+    @include icon-overlay-show;
+    position: static;
+  }
+
+  .sun {
+    @include icon-overlay-hide;
+    position: absolute; // Make it overlay the moon
+  }
+
+  .moon , .sun {
+    @include recolor($light-theme-fill-color, 0.8);
+    transition: all 0.4s var(--ease-elastic-3);
+  }
+}
+
+[data-theme="dark"] .sun-and-moon {
+  .moon {
+    @include icon-overlay-hide;
+  }
+
+  .sun {
+    @include icon-overlay-show;
+  }
+
+  .sun, .moon {
+    @include recolor($dark-theme-fill-color, 0.8);
+  }
+}
+
+// html{
+//   color-scheme:light
+// }
+// html[data-theme=dark]{
+//   color-scheme:dark
+// }
+
+

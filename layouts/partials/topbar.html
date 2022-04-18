@@ -15,18 +15,17 @@
           {{ end }}
           
           <!-- Extend Menu hide when on mobile -->
-          <div class="hide-on-mobile">
-            {{ range .Site.Menus.extend }}
-              {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-              {{- $page_url:= $currentPage.Permalink | absLangURL }}
-              <a class="menu-item{{- if eq $menu_item_url $page_url }} active {{- end }}"  href="{{ .URL | absLangURL }}"> {{ .Name }}</a>
-            {{ end }}
-          </div>
+          {{ range .Site.Menus.extend }}
+            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+            {{- $page_url:= $currentPage.Permalink | absLangURL }}
+            <a class="menu-item hide-on-mobile {{- if eq $menu_item_url $page_url }} active {{- end }}"  href="{{ .URL | absLangURL }}"> {{ .Name }}</a>
+          {{ end }}
         
           <div class="theme-switch-button"> {{ partial "theme-switch.html" . }}</div>
         </div>
       </div>
     </div>
   </div>
+  
   <div class="header-offset-bottom"></div>
 </nav>

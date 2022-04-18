@@ -8,7 +8,7 @@ module.exports = {
     main:"./src/js/index.ts",
     style: './src/styles/index.css',
     preload_style: './src/styles/preload.css',
-    font_awesome: './src/js/font-awesome.ts',
+    icons: './src/js/icons.ts'
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js",".css"],
