@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - main  # Set a branch to deploy
-  pull_request:
+    paths:
+      - 'archetypes'
+      - 'exampleSite'
+      - 'layouts'
+      - 'src'
+      - 'static'
+
+  # pull_request:
 
 jobs:
   deploy:
