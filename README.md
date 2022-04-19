@@ -4,9 +4,9 @@ Mild is a theme for hugo which is ported from [simpleness](https://github.com/Ra
 
 [![Build GitHub Pages](https://github.com/mildronize/hugo-theme-mild/actions/workflows/deploy-gh-pages.yaml/badge.svg)](https://github.com/mildronize/hugo-theme-mild/actions/workflows/deploy-gh-pages.yaml)
 
-## Lighthouse Pagespeed
+## Lighthouse Pagespeed (Mobile)
 
-[![lighthouse_results](lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/mildronize/hugo-theme-mild/main/lighthouse_results/mobile/thadaw_com_hugo_theme_mild_.html)
+[![lighthouse_results](https://raw.githubusercontent.com/mildronize/hugo-theme-mild/lighthouse/lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/mildronize/hugo-theme-mild/lighthouse/lighthouse_results/mobile/thadaw_com_hugo_theme_mild_.html)
 
 
 ## Live Demo
