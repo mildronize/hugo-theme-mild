@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:setup": "node ./.config/prepare-hugo-config.js exampleSite/config.yaml exampleSite/config.dev.yaml dev",
+    "dev:setup": "cd exampleSite && yq '.baseURL =\"/\", .params.webpackOutputPath = \"dev\"' config.yaml > config.dev.yaml",
     "dev": "run-s dev:setup && run-p **:develop",
 
     "hugo:develop": "cd exampleSite && hugo server --config config.dev.yaml --themesDir ../..",
@@ -17,15 +17,15 @@
     "purgecss:build": "run-s purgecss publish-purgecss",
     "purgecss": "purgecss --config .config/purgecss.config.js  --output exampleSite/public/assets/styles",
     "publish-purgecss": "copyfiles -V -f exampleSite/public/assets/styles/*.css ./static/assets/styles",
-    "clean": "rm -rf $TMPDIR/hugo_cache/ && rm -rf static/dev && rm -rf exampleSite/public",
+    "clean": "rm -rf $TMPDIR/hugo_cache/ && rm -rf static/dev && rm -rf exampleSite/public && rm -rf exampleSite/hugo-theme-mild",
 
     "build": "run-s webpack:build hugo:build purgecss",
     "publish": "run-s clean build publish-purgecss",
 
     "hugo:build-serve": "cd exampleSite && hugo --minify --config config.serve.yaml --themesDir ../..",
-    "serve:setup": "node ./.config/prepare-hugo-config.js exampleSite/config.yaml exampleSite/config.serve.yaml",
-    "serve:only": "http-server exampleSite/public",
-    "serve": "run-s serve:setup webpack:build hugo:build-serve purgecss serve:only"
+    "serve:setup": "cd exampleSite && yq '.params.webpackOutputPath = \"assets\"' config.yaml > config.serve.yaml",
+    "serve:only": "cp -r  exampleSite/public exampleSite/hugo-theme-mild && http-server exampleSite -o '/hugo-theme-mild/'",
+    "serve": "run-s clean serve:setup webpack:build hugo:build-serve purgecss serve:only"
   },
   "author": "Thada",
   "license": "MIT",

@@ -140,3 +140,4 @@ exampleSite/public
 # Hugo Config dev env
 config.dev.yaml
 config.serve.yaml
+exampleSite/hugo-theme-mild
