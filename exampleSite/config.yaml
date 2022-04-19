@@ -15,7 +15,7 @@ params:
   enableMathJax: false
   enableReadingTime: true
   favicon: favicon.ico
-  startyear: "2019"
+  startyear: "2015"
   description: A simple and concise hugo theme.
   disqus: ""
   valine:

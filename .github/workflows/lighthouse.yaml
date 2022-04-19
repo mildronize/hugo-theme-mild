@@ -17,7 +17,8 @@ env:
 on:
   workflow_run:
     workflows:
-      - "Build GitHub Pages"
+      # - "Build GitHub Pages"
+      - "pages-build-deployment" # Should trigger after deploy finished
   workflow_dispatch:
 
 jobs:
