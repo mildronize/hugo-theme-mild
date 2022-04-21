@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:setup": "cd exampleSite && yq '.baseURL =\"/\", .params.webpackOutputPath = \"dev\"' config.yaml > config.dev.yaml",
-    "dev": "run-s dev:setup && run-p **:develop",
+    "start": "run-s dev:setup && run-p **:develop",
 
     "hugo:develop": "cd exampleSite && hugo server --config config.dev.yaml --themesDir ../..",
     "hugo:build": "cd exampleSite && hugo --minify --themesDir ../..",

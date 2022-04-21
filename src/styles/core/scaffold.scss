@@ -25,7 +25,7 @@
 
   --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   /* Theme Transition */
-  --theme-transition: font-size 0.25s var(--ease-in-out-quad), background 0.25s var(--ease-in-out-quad),
+  --theme-transition: background 0.25s var(--ease-in-out-quad),
       color 0.25s var(--ease-in-out-quad); 
 }
 
